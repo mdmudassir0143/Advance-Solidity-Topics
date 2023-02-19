@@ -1,0 +1,14 @@
+function isContract(address _addr) public view returns (bool) {
+    uint codeSize;
+    assembly {
+        codeSize := extcodesize(_addr)
+    }
+    return (codeSize > 0);
+}
+
+
+//This function takes an address _addr as input and returns a boolean value indicating whether the address is a contract or not.
+
+//The assembly block is used to execute low-level assembly code in Solidity. In this case, we're using the "extcodesize" opcode to retrieve the size of the code stored at the given address. The result is stored in the codeSize variable.
+
+//Finally, the function returns true if codeSize is greater than zero, indicating that the address is a contract, and false otherwise.
